@@ -42,9 +42,6 @@ header .carousel-inner .carousel-item img {
     background-image: none;
 }
 
-
-/* ignore the code below */
-
 .dmenu:hover>.sm-menu {
     display: block;
 }
@@ -53,8 +50,7 @@ header .carousel-inner .carousel-item img {
 /* Footer */
 
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
-
-/* section {
+section {
     padding: 60px 0;
 }
 
@@ -63,7 +59,7 @@ section .section-title {
     color: #007b5e;
     margin-bottom: 50px;
     text-transform: uppercase;
-} */
+}
 
 #footer {
     background: #007b5e !important;
@@ -135,9 +131,6 @@ section .section-title {
 /* Footer end */
 
 @media (max-width:767px) {
-    /* #slider img {
-        height: 50vh;
-    } */
     #footer h5 {
         padding-left: 0;
         border-left: transparent;
