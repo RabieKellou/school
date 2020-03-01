@@ -1,6 +1,6 @@
 body {
     font-family: 'Coiny', cursive;
-    box-sizing:border-box;
+    box-sizing: border-box;
 }
 
 header {
@@ -12,21 +12,20 @@ header {
     top: 76px !important;
 }
 
-header .carousel-inner .carousel-item{
+header .carousel-inner .carousel-item {
     text-align: center;
     height: 90vh;
-
 }
 
 header .carousel-inner .carousel-item img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
     background-position: center;
     background-size: cover;
 }
 
 .carousel-caption {
-    padding:1em;
+    padding: 1em;
     bottom: 50%;
 }
 
@@ -44,47 +43,17 @@ header .carousel-inner .carousel-item img {
 }
 
 
-
-
 /* ignore the code below */
-
-
-.link-area {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    padding: 15px;
-    border-radius: 40px;
-    background: tomato;
-}
-
-.link-area a {
-    text-decoration: none;
-    color: #fff;
-    font-size: 25px;
-}
 
 .dmenu:hover>.sm-menu {
     display: block;
 }
 
 
-/* Slider */
-
-/* #slider img {
-    max-width: 100%;
-    height: 80vh;
-    background-position: center;
-    background-size: cover;
-} */
-
-
-/* \Slider */
-
-
 /* Footer */
 
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
 /* section {
     padding: 60px 0;
 }
@@ -166,7 +135,6 @@ section .section-title {
 /* Footer end */
 
 @media (max-width:767px) {
-
     /* #slider img {
         height: 50vh;
     } */
@@ -176,17 +144,14 @@ section .section-title {
         padding-bottom: 0px;
         margin-bottom: 10px;
     }
-
     .carousel-caption {
-       font-size: 1rem;
-       /* max-width: 100%; */
-
+        font-size: 1rem;
+        /* max-width: 100%; */
     }
-    .carousel-caption h2{
+    .carousel-caption h2 {
         font-size: 0.5%;
     }
-    .carousel-caption h3{
+    .carousel-caption h3 {
         font-size: 1em;
     }
-
 }
