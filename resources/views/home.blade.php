@@ -1,5 +1,6 @@
 @extends('layouts.master')
 
-@section('content')
+@section('slider')
     @include('elements.carousel')
 @endsection
+
