@@ -4,3 +4,7 @@
     @include('elements.carousel')
 @endsection
 
+@section('content')
+@include('elements.news')
+
+@endsection

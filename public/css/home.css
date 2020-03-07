@@ -1,11 +1,15 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: 'Coiny', cursive;
+    /* font-family: 'Coiny', cursive; */
     box-sizing: border-box;
 }
 
 header {
-    margin-bottom: 100px;
-    height: 100vh;
+    margin-bottom: 45px;
+    height: 100%;
 }
 
 .carousel {
@@ -14,23 +18,21 @@ header {
 
 header .carousel-inner .carousel-item {
     text-align: center;
-    height: 90vh;
+    height: 60vh;
 }
 
 header .carousel-inner .carousel-item img {
     width: 100%;
-    height: auto;
-    background-position: center;
+    height: 100%;
+    background-position: center center;
     background-size: cover;
 }
 
 .carousel-caption {
-    padding: 1em;
-    bottom: 50%;
+    padding: 3em 0;
 }
 
 .carousel-caption h2 {
-    font-size: 2.5rem;
     text-transform: uppercase;
 }
 
@@ -45,6 +47,85 @@ header .carousel-inner .carousel-item img {
 .dmenu:hover>.sm-menu {
     display: block;
 }
+
+
+/* News Card */
+
+.card img {
+    height: 150px;
+    width: 100%;
+}
+
+div [class^="col-"] {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.card {
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.card-title {
+    font-size: 15px;
+    transition: 1s;
+    cursor: pointer;
+}
+
+
+/*
+.card-title i {
+    font-size: 15px;
+    transition: 1s;
+    cursor: pointer;
+    color: #ffa710
+}
+
+.card-title i:hover {
+    transform: scale(1.25) rotate(100deg);
+    color: #18d4ca;
+} */
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+.card-text {
+    height: 80px;
+}
+
+.card::before,
+.card::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: scale3d(0, 0, 1);
+    transition: transform .3s ease-out 0s;
+    background: rgba(255, 255, 255, 0.1);
+    content: '';
+    pointer-events: none;
+}
+
+.card::before {
+    transform-origin: left top;
+}
+
+.card::after {
+    transform-origin: right bottom;
+}
+
+.card:hover::before,
+.card:hover::after,
+.card:focus::before,
+.card:focus::after {
+    transform: scale3d(1, 1, 1);
+}
+
+
+/* End News card */
 
 
 /* Footer */
@@ -62,7 +143,12 @@ section .section-title {
 }
 
 #footer {
-    background: #007b5e !important;
+    background: #0F2027;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #2C5364, #203A43, #0F2027);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #2C5364, #203A43, #0F2027);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 #footer h5 {
@@ -137,14 +223,18 @@ section .section-title {
         padding-bottom: 0px;
         margin-bottom: 10px;
     }
-    .carousel-caption {
+    /* .carousel-caption {
         font-size: 1rem;
-        /* max-width: 100%; */
-    }
-    .carousel-caption h2 {
-        font-size: 0.5%;
+
     }
     .carousel-caption h3 {
         font-size: 1em;
-    }
+    } */
+}
+
+
+/* remove the dotted outline on focus from everything */
+
+:focus {
+    outline: none !important;
 }
