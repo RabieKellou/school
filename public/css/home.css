@@ -51,7 +51,7 @@ header .carousel-inner .carousel-item img {
 
 /* News Card */
 
-.card img {
+#news .card img {
     height: 150px;
     width: 100%;
 }
