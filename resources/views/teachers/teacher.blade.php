@@ -1,8 +1,6 @@
- @extends('layouts.master') @section('navbar') {{--
-<div id="custom-menu">
-    <button type="button" id="sidebarCollapse" class="btn btn-primary">
-        </button>
-</div> --}}
+ @extends('layouts.master')
+ @section('navbar')
+
 <div class="custom-menu">
     <button class="navbar-toggler" id="sidebarCollapse" type="button" data-target="#sidebar" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 
@@ -11,7 +9,9 @@
 </button>
 </div>
 
-@endsection @section('content')
+@endsection
+
+@section('content')
 <div class="wrapper d-flex align-items-stretch">
     <nav id="sidebar">
 
