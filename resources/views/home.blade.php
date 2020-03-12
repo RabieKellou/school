@@ -19,7 +19,7 @@ aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle naviga
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="#news">Espace Etudiant</a>
+    <a class="nav-link" href="{{route('students.index') }}">Espace Etudiant</a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="#news">Espace Enseignant</a>
@@ -46,7 +46,7 @@ aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle naviga
         </div>
     </li> --}}
     <li class="nav-item">
-        <a class="nav-link" href="#">Departements</a>
+        <a class="nav-link" href="#departments">Departements</a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="#">Contact</a>
@@ -96,6 +96,6 @@ aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle naviga
 @endsection
 
 @section('content')
-@include('elements.news')
-
+    @include('elements.news')
+    @include('departments.index')
 @endsection

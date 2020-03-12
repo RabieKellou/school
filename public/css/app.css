@@ -10885,7 +10885,8 @@ a.text-dark:focus {
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: smooth !important;
+  scroll-padding-top: 36px;
 }
 
 body {
@@ -10920,6 +10921,7 @@ header .carousel-inner .carousel-item img {
 
 .carousel-caption h2 {
   text-transform: uppercase;
+  color: white;
 }
 
 .carousel-control-prev {
@@ -10936,7 +10938,7 @@ header .carousel-inner .carousel-item img {
 
 /* News Card */
 
-#news {
+.home__info {
   /* .card::before,
   .card::after {
       position: absolute;
@@ -10964,39 +10966,45 @@ header .carousel-inner .carousel-item img {
   } */
 }
 
-#news .card img {
+.home__info hr.sep {
+  width: 70vh;
+  background: #860fd4;
+  height: 1.2px;
+}
+
+.home__info .card img {
   height: 150px;
   width: 100%;
 }
 
-#news div [class^=col-] {
+.home__info div [class^=col-] {
   padding-left: 5px;
   padding-right: 5px;
 }
 
-#news .card {
+.home__info .card {
   transition: 0.5s;
 }
 
-#news .card-title {
+.home__info .card-title {
   font-size: 18px;
   transition: 1s;
 }
 
-#news .card:hover {
+.home__info .card:hover {
   box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
 }
 
 /* Footer */
 
 section {
-  padding: 60px 0;
+  padding: 40px 0;
 }
 
 section .section-title {
   text-align: center;
   color: #007b5e;
-  margin-bottom: 50px;
+  margin-bottom: 10px;
   text-transform: uppercase;
 }
 
@@ -11099,8 +11107,7 @@ body {
   font-size: 14px;
   line-height: 1.8;
   font-weight: normal;
-  background: #fff;
-  color: gray;
+  background-color: whitesmoke;
 }
 
 a {
@@ -11124,22 +11131,6 @@ button:focus {
   text-decoration: none !important;
   outline: none !important;
   box-shadow: none !important;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-.h1,
-.h2,
-.h3,
-.h4,
-.h5 {
-  line-height: 1.5;
-  font-weight: 400;
-  font-family: "Poppins", Arial, sans-serif;
-  color: #000;
 }
 
 .img {
@@ -11268,17 +11259,5 @@ h5,
 .bg-wrap .user-logo h3 {
   color: #fff;
   font-size: 18px;
-}
-
-a[data-toggle=collapse] {
-  position: relative;
-}
-
-.dropdown-toggle::after {
-  display: block;
-  position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
 }
 

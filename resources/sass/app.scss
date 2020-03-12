@@ -6,7 +6,8 @@
 @import '~bootstrap/scss/bootstrap';
 @import '~bootstrap/scss/mixins/';
 html {
-    scroll-behavior: smooth;
+    scroll-behavior: smooth !important;
+    scroll-padding-top: 36px;
 }
 
 body {
@@ -41,6 +42,7 @@ header .carousel-inner .carousel-item img {
 
 .carousel-caption h2 {
     text-transform: uppercase;
+    color: white
 }
 
 .carousel-control-prev {
@@ -58,7 +60,12 @@ header .carousel-inner .carousel-item img {
 
 /* News Card */
 
-#news {
+.home__info {
+    hr.sep {
+        width: 70vh;
+        background: rgb(134, 15, 212);
+        height: 1.2px;
+    }
     .card img {
         height: 150px;
         width: 100%;
@@ -114,13 +121,13 @@ header .carousel-inner .carousel-item img {
 
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 section {
-    padding: 60px 0;
+    padding: 40px 0;
 }
 
 section .section-title {
     text-align: center;
     color: #007b5e;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
     text-transform: uppercase;
 }
 
@@ -225,8 +232,8 @@ body {
     font-size: 14px;
     line-height: 1.8;
     font-weight: normal;
-    background: #fff;
-    color: lighten($black, 50%);
+    background-color: whitesmoke;
+    // color: lighten($black, 50%);
 }
 
 a {
@@ -250,22 +257,21 @@ button {
     }
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-.h1,
-.h2,
-.h3,
-.h4,
-.h5 {
-    line-height: 1.5;
-    font-weight: 400;
-    font-family: $font-primary;
-    color: $black;
-}
-
+// h1,
+// h2,
+// h3,
+// h4,
+// h5,
+// .h1,
+// .h2,
+// .h3,
+// .h4,
+// .h5 {
+//     line-height: 1.5;
+//     font-weight: 400;
+//     font-family: $font-primary;
+//     color: $black;
+// }
 //COVER BG
 .img {
     background-size: cover;
@@ -444,18 +450,16 @@ h5,
     }
 }
 
-a[data-toggle="collapse"] {
-    position: relative;
-}
-
-.dropdown-toggle::after {
-    display: block;
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
-}
-
+// a[data-toggle="collapse"] {
+//     position: relative;
+// }
+// .dropdown-toggle::after {
+//     display: block;
+//     position: absolute;
+//     top: 50%;
+//     right: 0;
+//     transform: translateY(-50%);
+// }
 // #sidebarCollapse {
 //     span {
 //         @include media-breakpoint-down(md) {
