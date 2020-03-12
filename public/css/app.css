@@ -10886,7 +10886,7 @@ a.text-dark:focus {
 
 html {
   scroll-behavior: smooth !important;
-  scroll-padding-top: 36px;
+  scroll-padding-top: 40px;
 }
 
 body {
