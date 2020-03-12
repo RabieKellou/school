@@ -8,7 +8,7 @@
                 <h5 class="card-title mt-1 mb-1">Sierra Web Development </h5>
                 <p class="card-text">This is a company that builds websites, web apps and e-commerce solutions.</p>
             <b class="mb-auto">by Rabie Kellou <time> {{ \Carbon\Carbon::now()->toDateString() }}</time> </b>
-                <a class="btn btn-secondary" href="#">Read more</a>
+                <a class="btn btn-secondary stretched-link" href="#">Read more</a>
 
             </div>
         </div>
@@ -18,7 +18,7 @@
                 <h5 class="card-title mt-1 mb-1">Sierra Web Development </h5>
                 <p class="card-text">This is a company that builds websites, web apps and e-commerce solutions.</p>
             <b class="mb-auto">by Rabie Kellou <time> {{ \Carbon\Carbon::now()->toDateString() }}</time> </b>
-                <a class="btn btn-secondary" href="#">Read more</a>
+                <a class="btn btn-secondary stretched-link" href="#">Read more</a>
 
             </div>
         </div>
@@ -28,7 +28,7 @@
                 <h5 class="card-title mt-1 mb-1">Sierra Web Development </h5>
                 <p class="card-text">This is a company that builds websites, web apps and e-commerce solutions.</p>
             <b class="mb-auto">by Rabie Kellou <time> {{ \Carbon\Carbon::now()->toDateString() }}</time> </b>
-                <a class="btn btn-secondary" href="#">Read more</a>
+                <a class="btn btn-secondary stretched-link" href="#">Read more</a>
 
             </div>
         </div>
@@ -38,7 +38,7 @@
                 <h5 class="card-title mt-1 mb-1">Sierra Web Development </h5>
                 <p class="card-text">This is a company that builds websites, web apps and e-commerce solutions.</p>
             <b class="mb-auto">by Rabie Kellou <time> {{ \Carbon\Carbon::now()->toDateString() }}</time> </b>
-                <a class="btn btn-secondary" href="#">Read more</a>
+                <a class="btn btn-secondary stretched-link" href="#">Read more</a>
 
             </div>
         </div>
