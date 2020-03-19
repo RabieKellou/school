@@ -51,13 +51,7 @@ aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle naviga
     <li class="nav-item">
         <a class="nav-link" href="#">Contact</a>
     </li>
-    {{--  @unless(Auth::check())
-        <a href="{{ route('login') }}" class="btn btn-primary ml-2">login</a>
-    @else
-    <a href="{{Auth::logout()  }}" class="btn btn-danger ml-2">logout</a>
-    @endunless --}}
 
-    <!-- Authentication Links -->
     @guest
         <li class="nav-item">
             <a class="btn btn-primary" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -71,7 +65,7 @@ aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle naviga
         <li class="nav-item dropdown">
             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                {{ Auth::user()->name }} <span class="caret"></span>
+                {{ Auth::user()->fname .' '. Auth::user()->lname }} <span class="caret"></span>
             </a>
 
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">

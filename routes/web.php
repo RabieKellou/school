@@ -20,7 +20,7 @@ Route::get('/', function () {
 })->name('home');
 
 
-Auth::routes(['register'=>false]);
+Auth::routes();
  Route::get('/home', 'HomeController@index');
 // Route::get('/login', 'HomeController@index')->name('home');
 Route::view('/etudiant', 'students.index')->name('students.index');
