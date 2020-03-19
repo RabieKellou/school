@@ -24,8 +24,6 @@ jobs:
       run: composer install -q --optimize-autoloader --no-dev --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist
     - name: Configure application
       run: |
-        php artisan cache:clear
-        php artisan config:clear
         php artisan config:cache
         php artisan view:cache
         php artisan key:generate
