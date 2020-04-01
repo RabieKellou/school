@@ -15,11 +15,16 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'user_cin','user_role','fname','lname', 'email', 'password',
+        'user_cin','user_role','fname','lname', 'email','address', 'password','dob','doj','gender','social_status','phone',
     ];
 
+     /**
+     * The primary key for the model.
+     *
+     * @var string
+     */
     protected $primaryKey = 'user_id';
-    public $exists = true;
+
 
     /**
      * The attributes that should be hidden for arrays.
@@ -38,4 +43,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function role(){
+        return $this->hasOne('App\Role','role_id','user_role');
+    }
+
+    public function student(){
+        return $this->hasOne('App\Student','std_id','user_id');
+    }
+
+
 }

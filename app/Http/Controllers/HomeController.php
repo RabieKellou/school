@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Department;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -13,7 +14,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        // $this->middleware('auth');
     }
 
     /**
@@ -23,6 +24,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $arr['departments'] = Department::all();
+        $arr['departments']= $arr['departments']->map(function ($dept) {
+             $dept->dept_desc = substr($dept->dept_desc, 0, 100).'...';
+            //  dd($dept->dept_desc);
+
+             return $dept;
+        });
+        // dd($arr['departments'][0]['dept_desc']);
+        // dd($arr);
+        return view('home', $arr);
     }
 }
