@@ -27,6 +27,8 @@ jobs:
         php artisan config:cache
         php artisan view:cache
         php artisan key:generate
+        php artisan migrate:refresh
+        php artisan db:seed
     - name: Directory Permissions
       run: chmod -R 777 storage bootstrap/cache
 
