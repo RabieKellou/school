@@ -27,7 +27,7 @@ jobs:
           - 50315:3306
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
    env:
-     DB_PORT: ${{ job.services.mysql.ports[‘50315’] }}
+     DB_PORT: ${{ jobs.services.mysql.ports[‘50315’] }}
    steps:
     - uses: actions/checkout@v2
     - name: Copy .env
