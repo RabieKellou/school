@@ -34,3 +34,7 @@ Route::view('/admin/stds', 'admin.std.index');*/
 
 
 Route::resource('admin/students', 'Student\StudentController')->middleware('auth');
+
+// News
+Route::resource('/news', 'News\NewsController')->except('show');
+Route::get('/news/{id}/{title?}','News\NewsController@show')->name('news.show');

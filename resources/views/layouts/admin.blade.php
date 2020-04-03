@@ -176,7 +176,7 @@
         <a href="#" class="d-block">{{ Auth::user()->fname .' '.  Auth::user()->lname}}</a>
         </div>
       </div>
-      pills
+
 
       <!-- Sidebar Menu -->
       <nav class="mt-2" data-toggle="collapse">

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Student;
 
+use App\Department;
 use App\Http\Controllers\Controller;
+use App\Option;
 use App\Role;
 use App\User;
 use Illuminate\Http\Request;
@@ -88,6 +90,8 @@ class StudentController extends Controller
         $user = User::findOrfail($id);
         // dd($user->student->option->opt_name);
         $arr['user'] = $user;
+        $arr['options']= Option::all();
+        $arr['depts']= Department::all();
         return view('students.edit')->with($arr);
         //echo $user->user_id;
 
@@ -113,7 +117,8 @@ class StudentController extends Controller
 
 
         $user->save();
-        return redirect()->route('admin.std.index');
+        dd("student updated");
+        return redirect()->route('students.show');
     }
 
     /**

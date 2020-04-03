@@ -51,8 +51,16 @@
                     <div class="clearfix"></div>
                 </div>
                 <div class="row">
-                    <label class="col-md-3">Departement</label>
-                    <div class="col-md-6"><input type="text" name="dept" class="form-control" value="{{$user->student->department->dept_name}}"></div>
+                    <label for="dept" class="col-md-3">Departement</label>
+                    <div class="col-md-6">
+                    <select class="form-control" name="dept" id="dept">
+                        @foreach ($depts as $dept)
+                            <option value="{{ $dept->dept_id }}" @if($user->student->department->dept_id === $dept->dept_id) selected @endif > {{ $dept->dept_name }}</option>
+                        @endforeach
+
+                      </select>
+                    </div>
+                    {{-- <div class="col-md-6"><input type="text" name="dept" class="form-control" value="{{$user->student->department->dept_name}}"></div> --}}
                     <div class="clearfix"></div>
                 </div>
                 <div class="row">

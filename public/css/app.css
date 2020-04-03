@@ -5152,12 +5152,10 @@ input[type=button].btn-block {
 
 @media (min-width: 576px) {
   .card-columns {
-    -webkit-column-count: 3;
-       -moz-column-count: 3;
-            column-count: 3;
-    -webkit-column-gap: 1.25rem;
-       -moz-column-gap: 1.25rem;
-            column-gap: 1.25rem;
+    -moz-column-count: 3;
+         column-count: 3;
+    -moz-column-gap: 1.25rem;
+         column-gap: 1.25rem;
     orphans: 1;
     widows: 1;
   }
@@ -10967,7 +10965,7 @@ header .carousel-inner .carousel-item img {
 }
 
 .home__info hr.sep {
-  width: 85vw;
+  width: 75vw;
   background: #860fd4;
   height: 1.2px;
 }
@@ -10983,16 +10981,21 @@ header .carousel-inner .carousel-item img {
 }
 
 .home__info .card {
-  transition: 0.5s;
+  transition: 0.3s;
+  height: 320px;
 }
 
 .home__info .card-title {
   font-size: 18px;
-  transition: 1s;
 }
 
 .home__info .card:hover {
-  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.4);
+}
+
+.home__info .card-text {
+  height: 100%;
+  overflow: hidden;
 }
 
 /* Footer */

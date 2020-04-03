@@ -3,6 +3,7 @@
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
 use App\Department;
+use App\News;
 use App\Option;
 use App\Semester;
 use App\Student;
@@ -33,7 +34,7 @@ $factory->define(User::class, function (Faker $faker) {
         'fname' => $faker->firstName,
         'lname' => $faker->lastName,
         'user_role' => 1,
-        'user_cin' => 'Ua'.$faker->randomNumber(6),
+        'user_cin' => 'Ua' . $faker->randomNumber(6),
         'email' => $faker->unique()->safeEmail,
         'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
         'dob' => $faker->date(),
@@ -45,30 +46,42 @@ $factory->define(User::class, function (Faker $faker) {
     ];
 });
 $factory->define(Department::class, function (Faker $faker) {
+    $arr = ['GI', 'GE', 'TM', 'TCC'];
+    $num = $faker->biasedNumberBetween(0, 3);
     return [
-        'dept_name' => $faker->randomElement(['GI','GE','TM','TCC']),
+        'dept_name' => $arr[$num],
         'dept_desc' => $faker->sentence(6),
-        'dept_manager' => $faker->randomElement([1,2,3,4]), // password
+        'dept_manager' => $faker->randomElement([1, 2, 3, 4]), // password
     ];
 });
 $factory->define(Option::class, function (Faker $faker) {
     return [
         'opt_name' => $faker->sentence(2),
-        'dept_id' => $faker->randomElement([1,2,3,4]),
+        'dept_id' => $faker->randomElement([1, 2, 3, 4]),
         'opt_desc' => $faker->sentence(6),
     ];
 });
 $factory->define(Semester::class, function (Faker $faker) {
     return [
-        'sem_label' => $faker->randomElement(['S1','S2','S3','S4']),
+        'sem_label' => $faker->randomElement(['S1', 'S2', 'S3', 'S4']),
+    ];
+});
+
+$factory->define(News::class, function (Faker $faker) {
+    $users = User::pluck('user_id')->toArray();
+    return [
+        'user_id' => $faker->randomElement($users),
+        'news_title' => $faker->sentence(4),
+        'news_content' => $faker->realText(),
+        'news_date' => $faker->date(),
     ];
 });
 $factory->define(Student::class, function (Faker $faker) {
     return [
-        'dept_id' => $faker->randomElement([1,2]),
-        'opt_id' => $faker->randomElement([1,2]),
-        'sem_id' => $faker->randomElement([1,2,3,4]),
-        'std_cne' => 'M'.$faker->randomNumber(9),
+        'dept_id' => $faker->randomElement([1, 2]),
+        'opt_id' => $faker->randomElement([1, 2]),
+        'sem_id' => $faker->randomElement([1, 2, 3, 4]),
+        'std_cne' => 'M' . $faker->randomNumber(9),
         'std_graduated' => $faker->boolean, // password
 
     ];

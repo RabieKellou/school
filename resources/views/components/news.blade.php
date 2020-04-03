@@ -1,7 +1,29 @@
-<section id="news" class="mt-2 py container home__info">
-    <h3 class="text-center">Actualités recentes</h3>
+<section id="news" class="mt-2 container home__info">
+    <h3 class="text-center">{{ $title }}</h3>
     <hr class="sep">
     <div class="row">
+        @forelse ($news as $article)
+            <div class="col-md-3 col-sm-6 mb-2">
+                <div class="card card-block p-2">
+                    <img src="https://static.pexels.com/photos/7096/people-woman-coffee-meeting.jpg" alt="Photo of sunset">
+                    <h5 class="card-title mt-1 mb-1"> {{ $article->news_title }}</h5>
+                    <p class="card-text">{{ $article->news_content }}</p>
+                    {{-- \Carbon\Carbon::now()->toDateString() --}}
+                    <span>by <b>{{ $article->author->fname .' '. $article->author->lname }}</b> </span><em class="text-right"><time> {{  $article->news_date->diffForHumans()}}</time></em>
+                    <a class="btn btn-secondary stretched-link" href="{{  route('news.show',['id'=>$article->news_id,'title'=>$article->news_title]) }}">Lire plus</a>
+
+                </div>
+            </div>
+        @empty
+        <div class="row">
+            <p>aucune actualité pour le moment</p>
+        </div>
+
+        @endforelse
+    </div>
+    <hr>
+
+    {{-- <div class="row">
         <div class="col-md-3 col-sm-6">
             <div class="card card-block p-2">
                 <img src="https://static.pexels.com/photos/7096/people-woman-coffee-meeting.jpg" alt="Photo of sunset">
@@ -42,9 +64,7 @@
 
             </div>
         </div>
-    </div>
+    </div> --}}
+    {{ $slot }}
     <hr>
-        <div class="row">
-            <a href="#" class="btn btn-lg btn-dark px-5 mx-auto">Voir Plus</a>
-        </div>
 </section>

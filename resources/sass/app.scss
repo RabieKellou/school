@@ -62,7 +62,7 @@ header .carousel-inner .carousel-item img {
 
 .home__info {
     hr.sep {
-        width: 85vw;
+        width: 75vw;
         background: rgb(134, 15, 212);
         height: 1.2px;
     }
@@ -75,19 +75,18 @@ header .carousel-inner .carousel-item img {
         padding-right: 5px;
     }
     .card {
-        transition: 0.5s;
-        // cursor: pointer;
+        transition: 0.3s;
+        height: 320px;
     }
     .card-title {
         font-size: 18px;
-        transition: 1s;
-        // cursor: pointer;
     }
     .card:hover {
-        box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+        box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.4);
     }
     .card-text {
-        // height: 80px;
+        height: 100%;
+        overflow: hidden;
     }
     /* .card::before,
     .card::after {

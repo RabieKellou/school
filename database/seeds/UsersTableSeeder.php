@@ -18,11 +18,15 @@ class UsersTableSeeder extends Seeder
         });
 
         factory(App\Semester::class, 4)->create();
-        factory(App\User::class, 99)->create()->each(function ($user) {
+
+        factory(App\User::class, 105)->create()->each(function ($user) {
             $user->student()->save(factory(App\Student::class)->make());
             // $std->option->attach(factory(App\Semester::class));
+        });
 
-    });
+        // News Seeder
+        factory(App\News::class, 25)->create();
+
 
 }
 }

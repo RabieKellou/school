@@ -15,8 +15,8 @@
         <!-- Navigation -->
         <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark shadow fixed-top">
             <div class="container">
-                <a class="navbar-brand" href="/">
-                    <img src="{{asset('images/logo.svg')}}" alt="skool logo">
+                <a class="navbar-brand" href="{{ route('home') }}">
+                    <img src="{{asset('images/logo.svg')}}" alt="school logo">
                 </a>
                 @yield('navbar')
             </div>
