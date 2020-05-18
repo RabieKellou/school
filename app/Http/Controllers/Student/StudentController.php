@@ -49,18 +49,18 @@ class StudentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, User $user)
+    public function store(User $user)
     {
 
 
-        $user->user_id = $request->id;
-        $user->fname = $request->fname;
-        $user->lndame = $request->lname;
-        $user->user_cin = $request->cin;
+        $user->user_id = request('id');
+        $user->fname = request('fname');
+        $user->lndame =request('lname');
+        $user->user_cin = request('cin');
         $user->user_role = 'etudiant';
-        $user->email = $request->email;
-        $user->password = '12377894';
-        $user->dob = $request->dob;
+        $user->email = request('email');
+        $user->password = req('password');
+        $user->dob =request('dob');
 
 
         $user->save();

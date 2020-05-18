@@ -1,3 +1,4 @@
+{{ dd(request()->routeName()) }}
 <!DOCTYPE html>
 <html>
 <head>
@@ -192,7 +193,7 @@
             </a>
           </li>
             <li class="nav-item ">
-                <a href="{{ route('students.index')}}" class="nav-link active">
+                <a href="{{ route('students.index')}}" class="nav-link">
                     <i class="nav-icon "></i>
                     <p>
                         students
