@@ -1,4 +1,5 @@
-@extends('layouts.admin') @section('contentadmin') {{--
+@extends('layouts.admin')
+@section('contentadmin') {{--
 <div class="content-header">
     <div class="container-fluid">
         <div class="row mb-2">
@@ -34,20 +35,20 @@
                 <th>Sexe</th>
                 <th>Action</th>
             </tr>
-            @foreach($students as $std)
+            @foreach($students as $student)
             <tr>
-                <td>{{ $std->user_cin }}</td>
-                <td>{{ $std->lname }}</td>
-                <td>{{ $std->fname }}</td>
-                <td>{{ $std->email }}</td>
-                <td>{{ $std->gender }}</td>
+                <td>{{ $student->user_cin }}</td>
+                <td>{{ $student->lname }}</td>
+                <td>{{ $student->fname }}</td>
+                <td>{{ $student->email }}</td>
+                <td>{{ $student->gender }}</td>
 
 
 
 
                 <td class="d-flex">
-                    <a href="{{ route('students.show',$std->user_id) }}" class="btn btn-sm btn-info mr-1" data-toggle="tooltip" data-placement="top" title="profile"><i class="fa fa-user" aria-hidden="true"></i></a>
-                    <a href="{{ route('students.edit',$std->user_id) }}" class="btn btn-sm btn-info mr-1" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-user-edit"></i></a>
+                    <a href="{{ route('students.show',$student->user_id) }}" class="btn btn-sm btn-info mr-1" data-toggle="tooltip" data-placement="top" title="profile"><i class="fa fa-user" aria-hidden="true"></i></a>
+                    <a href="{{ route('students.edit',$student->user_id) }}" class="btn btn-sm btn-info mr-1" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-user-edit"></i></a>
                     <a href="javascript:void(0)" onclick="$(this).parent().find('form').submit()" class="btn btn-sm btn-danger" data-placement="top" title="Delete"><i class="fa fa-trash" aria-hidden="true"></i></a>
                     <form action="#" method="post">
                         @method('DELETE') @csrf
@@ -110,17 +111,17 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @forelse($students as $std)
+                                @forelse($students as $student)
                                 <tr role="row" class="odd">
-                                    <td>{{ $std->user_id }}</td>
-                                    <td>{{ $std->user_cin }}</td>
-                                    <td class="sorting_1">{{ $std->lname }}</td>
-                                    <td>{{ $std->fname }}</td>
-                                    <td>{{ $std->email }}</td>
-                                    <td>{{ $std->gender }}</td>
+                                    <td>{{ $student->user_id }}</td>
+                                    <td>{{ $student->user_cin }}</td>
+                                    <td class="sorting_1">{{ $student->lname }}</td>
+                                    <td>{{ $student->fname }}</td>
+                                    <td>{{ $student->email }}</td>
+                                    <td>{{ $student->gender }}</td>
                                     <td class="d-flex">
-                                        <a href="{{ route('students.show',$std->user_id) }}" class="btn btn-sm btn-info mr-1" data-toggle="tooltip" data-placement="top" title="profile"><i class="fa fa-user" aria-hidden="true"></i></a>
-                                        <a href="{{ route('students.edit',$std->user_id) }}" class="btn btn-sm btn-info mr-1" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-user-edit"></i></a>
+                                        <a href="{{ route('students.show',$student->user_id) }}" class="btn btn-sm btn-info mr-1" data-toggle="tooltip" data-placement="top" title="profile"><i class="fa fa-user" aria-hidden="true"></i></a>
+                                        <a href="{{ route('students.edit',$student->user_id) }}" class="btn btn-sm btn-info mr-1" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-user-edit"></i></a>
                                         <a href="javascript:void(0)" onclick="$(this).parent().find('form').submit()" class="btn btn-sm btn-danger" data-placement="top" title="Delete"><i
                                                 class="fa fa-trash" aria-hidden="true"></i></a>
                                         <form action="#" method="post">

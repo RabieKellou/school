@@ -20,13 +20,13 @@ class RolesTableSeeder extends Seeder
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
 
         Role::create([
+            'role_name' => 'admin',
+        ]);
+        Role::create([
             'role_name' => 'etudiant',
         ]);
         Role::create([
             'role_name' => 'enseignant',
-        ]);
-        Role::create([
-            'role_name' => 'admin',
         ]);
     }
 }

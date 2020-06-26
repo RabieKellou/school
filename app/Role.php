@@ -14,8 +14,21 @@ class Role extends Model
      */
     protected $primaryKey = 'role_id';
 
-    public function users(){
-        return $this->hasMany('App\User','user_role','role_id');
+    /**
+     * one to Many relationship with User.
+     *  @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function users()
+    {
+        return $this->hasMany('App\User', 'user_role', 'role_id');
     }
-
+    /**
+     * get the role Id by role name
+     * @param string $roleName
+     * @return int
+     */
+    public static function getRoleIdByName($roleName)
+    {
+        return Role::where('role_name', $roleName)->pluck('role_id')->first();
+    }
 }

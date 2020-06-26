@@ -34,9 +34,57 @@
 
 
 
-
     <!-- Footer -->
     <section id="footer">
+        <div class="container">
+            <div class="row text-center text-xs-center text-sm-left text-md-left">
+
+                <div class="col-xs-12 col-sm-6 col-md-6">
+                    <h5>contact</h5>
+                    <ul class="list-unstyled quick-links">
+                        <li><a href="javascript:void();"><i class=""></i>meknes</a></li>
+                        <li><a href="javascript:void();"><i class=""></i>MARJAN 2</a></li>
+                        <li><a href="javascript:void();"><i class=""></i>PHONE NUMBER:0548911654</a></li>
+                        <li><a href="javascript:void();"><i class=""></i>MOBILE NUMBER:06198498</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-6">
+                    <h5>SITE links</h5>
+                    <ul class="list-unstyled quick-links">
+                        <li><a href="#news"><i class="fa fa-angle-double-right bo"></i>actualités</a></li>
+                        <li><a href="{{route('students.index') }}"><i class="fa fa-angle-double-right"></i>espace
+                                etudiant</a></li>
+                        <li><a href=""><i class="fa fa-angle-double-right"></i>espace enseignant</a></li>
+                        <li><a href="#departments"><i class="fa fa-angle-double-right"></i>departements</a></li>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
+                    <ul class="list-unstyled list-inline social text-center">
+                        <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-facebook"></i></a>
+                        </li>
+                        <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-twitter"></i></a></li>
+                        <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-instagram"></i></a>
+                        </li>
+                        <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-google-plus"></i></a>
+                        </li>
+                        <li class="list-inline-item"><a href="javascript:void();" target="_blank"><i
+                                    class="fa fa-envelope"></i></a></li>
+                    </ul>
+                </div>
+                </hr>
+            </div>
+
+        </div>
+    </section>
+    <!-- ./Footer -->
+
+    <!-- Footer -->
+
+    <!-- <section id="footer">
         <div class="container">
             <div class="row text-center text-xs-center text-sm-left text-md-left">
                 <div class="col-xs-12 col-sm-4 col-md-4">
@@ -99,6 +147,7 @@
             </div>
         </div>
     </section>
+-->
     <!-- ./Footer -->
     @section('scripts')
     <script src="{{ asset('js/app.js') }}"></script>

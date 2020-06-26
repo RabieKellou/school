@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class News extends Model
 {
     //
+
+    protected $fillable = ['user_id', 'news_title', 'news_content'];
     /**
      * The primary key for the model.
      *

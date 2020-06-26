@@ -33,7 +33,7 @@ $factory->define(User::class, function (Faker $faker) {
         // 'remember_token' => Str::random(10),
         'fname' => $faker->firstName,
         'lname' => $faker->lastName,
-        'user_role' => 1,
+        'user_role' => $faker->randomElement([1, 2]),
         'user_cin' => 'Ua' . $faker->randomNumber(6),
         'email' => $faker->unique()->safeEmail,
         'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
@@ -71,9 +71,8 @@ $factory->define(News::class, function (Faker $faker) {
     $users = User::pluck('user_id')->toArray();
     return [
         'user_id' => $faker->randomElement($users),
-        'news_title' => $faker->sentence(4),
-        'news_content' => $faker->realText(),
-        'news_date' => $faker->date(),
+        'news_title' => $faker->sentence(8),
+        'news_content' => $faker->realText(8000),
     ];
 });
 $factory->define(Student::class, function (Faker $faker) {

@@ -3,12 +3,23 @@
 namespace App\Http\Controllers\News;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreArticle;
 use App\News;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\URL ;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\URL;
 
 class NewsController extends Controller
 {
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth')->except(['index', 'show']);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -16,8 +27,8 @@ class NewsController extends Controller
      */
     public function index()
     {
-        $arr['news'] = News::latest('news_date')->paginate(8);
-        return view('news.index',$arr);
+        $data['news'] = News::latest('updated_at')->paginate(8);
+        return view('news.index', $data);
     }
 
     /**
@@ -27,7 +38,7 @@ class NewsController extends Controller
      */
     public function create()
     {
-        //
+        return view('news.create');
     }
 
     /**
@@ -36,9 +47,15 @@ class NewsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreArticle $request)
     {
-        //
+        dd($request->user()->isAdmin());
+        $article = News::create([
+            'user_id' => Auth::user()->user_id,
+            'news_title' => $request->news_title,
+            'news_content' => $request->news_content,
+        ]);
+        return redirect()->route('news.show', ['id' => $article->news_id]);
     }
 
     /**
@@ -49,9 +66,10 @@ class NewsController extends Controller
      */
     public function show($id)
     {
-        //
-        $arr['article']= News::findOrFail($id);
-        return view('news.show',$arr);
+        //$data['article'] = News::where('news_title', 'like', $title)->firstOrFail();
+        $data['article'] = News::findOrfail($id);
+        // dd($data['article']);
+        return view('news.show', $data);
     }
 
     /**
@@ -62,7 +80,9 @@ class NewsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data['article'] = News::findOrfail($id);
+        // dd($data['article']);
+        return view("news.edit", $data);
     }
 
     /**
@@ -72,9 +92,13 @@ class NewsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(StoreArticle $request, $id)
     {
-        //
+        $article = News::findOrfail($id);
+        $article->news_title = $request->get('news_title');
+        $article->news_content = $request->get('news_content');
+        $article->save();
+        return redirect()->route('news.show', ['id' => $article->news_id]);
     }
 
     /**
@@ -85,6 +109,9 @@ class NewsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $article = News::findOrfail($id);
+        $article->delete();
+
+        return redirect()->back()->withStatus('article was deleted');
     }
 }

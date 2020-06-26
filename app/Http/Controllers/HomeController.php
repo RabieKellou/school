@@ -26,25 +26,18 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $arr['departments'] = Department::all()->map(function ($dept) {
-            $dept->dept_desc = Str::limit($dept->dept_desc,40);
-           //  dd($dept->dept_desc);
+        //get all the departments and excerpt each of their desc
+        $data['departments']  = Department::cursor()->map(function ($dept) {
 
+            $dept->dept_desc = Str::limit($dept->dept_desc, 40);
             return $dept;
-       });
-        $arr['news'] = News::latest('news_date')->take(4)->get()->map(function ($news) {
-            $news->news_content = Str::limit($news->news_content,40);
+        });
+
+        //get the latest 4 news and excerpt map of their content
+        $data['news'] = News::latest('updated_at')->take(4)->get()->map(function ($news) {
+            $news->news_content = Str::limit($news->news_content, 40);
             return $news;
-       });
-        // $arr['departments']= $arr['departments']->map(function ($dept) {
-        //      $dept->dept_desc = substr($dept->dept_desc, 0, 100).'...';
-        //     //  dd($dept->dept_desc);
-
-        //      return $dept;
-        // });
-
-        // dd($arr['departments'][0]['dept_desc']);
-        // dd($arr);
-        return view('home', $arr);
+        });
+        return view('home', $data);
     }
 }

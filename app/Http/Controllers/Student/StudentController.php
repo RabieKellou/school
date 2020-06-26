@@ -20,9 +20,11 @@ class StudentController extends Controller
     {
         //  $arr['users'] = User::all();
 
-// DB::enableQueryLog();
+        // DB::enableQueryLog();
         // $role_id = Role::whereRoleName('etudiant')->pluck('role_id')->first();
-        $data['students'] = User::with('student')->get();
+        $data['students'] = User::has('student')->get();
+
+        $data['active_tab'] = 'students';
         // dd($stds);
         // $data['students'] = DB::select('select * from users where user_role = (?)',[$role_id]);
         // dd($data);
@@ -55,12 +57,12 @@ class StudentController extends Controller
 
         $user->user_id = request('id');
         $user->fname = request('fname');
-        $user->lndame =request('lname');
+        $user->lndame = request('lname');
         $user->user_cin = request('cin');
         $user->user_role = 'etudiant';
         $user->email = request('email');
-        $user->password = req('password');
-        $user->dob =request('dob');
+        $user->password = request('password');
+        $user->dob = request('dob');
 
 
         $user->save();
@@ -87,12 +89,11 @@ class StudentController extends Controller
      */
     public function edit($id)
     {
-        $user = User::findOrfail($id);
-        // dd($user->student->option->opt_name);
-        $arr['user'] = $user;
-        $arr['options']= Option::all();
-        $arr['depts']= Department::all();
-        return view('students.edit')->with($arr);
+        $data['user'] = User::findOrfail($id);
+        dd($data['user']->student);
+        $data['options'] = Option::all();
+        $data['depts'] = Department::all();
+        return view('students.edit')->with($data);
         //echo $user->user_id;
 
     }

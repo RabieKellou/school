@@ -16,13 +16,11 @@ class CreateNewsTable extends Migration
         Schema::create('news', function (Blueprint $table) {
             $table->bigIncrements('news_id');
             $table->unsignedBigInteger('user_id');
-            $table->string('news_title',1024);
+            $table->string('news_title', 1024);
             $table->text('news_content');
-            $table->date('news_date');
             $table->timestamps();
 
-            $table->foreign('user_id','FK_users_news')->references('user_id')->on('users');
-
+            $table->foreign('user_id', 'FK_users_news')->references('user_id')->on('users');
         });
     }
 
